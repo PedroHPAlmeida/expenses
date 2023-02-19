@@ -1,5 +1,6 @@
 package br.com.expenses.controller;
 
+import br.com.expenses.controller.dto.ExpenseDto;
 import br.com.expenses.model.Expense;
 import br.com.expenses.repository.ExpenseRepository;
 import lombok.AllArgsConstructor;
@@ -21,9 +22,9 @@ public class ExpenseController {
         return new ModelAndView("new-expense");
     }
 
-    @PostMapping(path = "new")
-    public ModelAndView save(Expense expense) {
-        expenseRepository.save(expense);
+    @PostMapping(path = "/new")
+    public ModelAndView save(ExpenseDto expense) {
+        expenseRepository.save(expense.toExpense());
         return new ModelAndView("new-expense");
     }
 

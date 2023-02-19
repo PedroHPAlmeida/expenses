@@ -7,7 +7,7 @@
     </head>
     <body>
         <div class="container">
-            <form method="post" th:action="@{/expenses/new}" th:object="${expense}">
+            <form method="post" th:action="@{/expenses/new}" th:object="${expenseDto}">
                 <div class="mb-3">
                     <label class="form-label" for="titulo">Despesa</label>
                     <input th:field="*{title}" class="form-control" id="titulo" placeholder="Título da despesa">
