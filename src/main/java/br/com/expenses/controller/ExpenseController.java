@@ -1,7 +1,6 @@
 package br.com.expenses.controller;
 
 import br.com.expenses.controller.dto.ExpenseDto;
-import br.com.expenses.model.Expense;
 import br.com.expenses.repository.ExpenseRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -18,7 +17,7 @@ public class ExpenseController {
     private ExpenseRepository expenseRepository;
 
     @GetMapping(path = "/form")
-    public ModelAndView newExpense(Expense expense) {
+    public ModelAndView newExpense(ExpenseDto expense) {
         return new ModelAndView("new-expense");
     }
 
