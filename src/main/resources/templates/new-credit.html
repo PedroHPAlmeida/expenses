@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head th:replace="~{ base :: head('Novo Crédito') }"></head>
+    <body>
+        <div th:replace="~{ base :: header }"></div>
+        <div class="container">
+            <div th:replace="~{ base :: titulo('Novo Crédito') }"></div>
+            <form method="post" th:action="@{/credits/new}">
+                <div class="mb-3">
+                    <div class="mb-2">Tipo de Crédito</div>
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Salário
+                        </label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Vale
+                        </label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Outro
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <label class="form-label" for="valor">Valor</label>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">R$</span>
+                            <input class="form-control" min="0" step="0.01" id="valor" type="number" placeholder="Valor da despesa">
+                        </div>
+                    </div>
+                    <div class="col-4 mb-3">
+                        <label class="form-label" for="data">Data</label>
+                        <input class="form-control" id="data" type="date">
+                    </div>
+                    <div class="col-4 mb-3">
+                        <label class="form-label" for="mesCorrente">Mês Corrente</label>
+                        <input class="form-control" type="month" id="mesCorrente">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="descricao">Descrição</label>
+                    <textarea class="form-control" id="descricao" placeholder="Descrição da despesa"></textarea>
+                </div>
+                <button class="btn btn-success" type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </body>
+</html>
