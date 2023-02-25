@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head th:replace="~{base :: head('Despesas')}"></head>
+    <head th:replace="~{base :: head('Extrato')}"></head>
     <body>
         <div th:replace="~{base :: header}"></div>
         <div class="container">
-            <div th:replace="~{base :: titulo('Despesas')}"></div>
+            <div th:replace="~{base :: titulo('Extrato')}"></div>
             <table class="table">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
+                        <th scope="col">Tipo</th>
                         <th scope="col">Título</th>
                         <th scope="col">Valor</th>
                         <th scope="col">Data</th>
@@ -16,14 +17,15 @@
                         <th scope="col">Descrição</th>
                     </tr>
                 </thead>
-                <tbody th:each="expense : ${expenses}">
+                <tbody th:each="financialRecord : ${financialRecords}">
                     <tr>
-                        <th scope="row" th:text="${expense.id}"></th>
-                        <td th:text="${expense.title}">AAA</td>
-                        <td th:text="${expense.amount}">AAA</td>
-                        <td th:text="${expense.date}">AAA</td>
-                        <td th:text="${expense.currentMonth}">AAA</td>
-                        <td th:text="${expense.description}">AAA</td>
+                        <th scope="row" th:text="${financialRecord.id}"></th>
+                        <td th:text="${financialRecord.transactionType}"></td>
+                        <td th:text="${financialRecord.title}"></td>
+                        <td th:text="${financialRecord.amount}"></td>
+                        <td th:text="${financialRecord.date}"></td>
+                        <td th:text="${financialRecord.currentMonth}"></td>
+                        <td th:text="${financialRecord.description}"></td>
                     </tr>
                 </tbody>
             </table>

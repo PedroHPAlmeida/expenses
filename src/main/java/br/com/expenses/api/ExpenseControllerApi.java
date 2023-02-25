@@ -1,7 +1,7 @@
 package br.com.expenses.api;
 
-import br.com.expenses.model.Expense;
-import br.com.expenses.repository.ExpenseRepository;
+import br.com.expenses.model.FinancialRecord;
+import br.com.expenses.repository.FinancialRecordRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,10 +14,10 @@ import java.util.List;
 @RequestMapping(path = "/api/expenses")
 public class ExpenseControllerApi {
 
-    private ExpenseRepository repository;
+    private FinancialRecordRepository repository;
 
     @GetMapping
-    public List<Expense> findAll() {
+    public List<FinancialRecord> findAll() {
         return repository.findAll();
     }
 

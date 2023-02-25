@@ -21,7 +21,7 @@ public class FinancialRecordDto {
     private LocalDate date;
     private String description;
     private String currentMonth;
-    private String transactionType;
+    private String transactionType = "DEBITO";
 
     public FinancialRecord toFinancialRecord() {
         FinancialRecord financialRecord = new FinancialRecord();

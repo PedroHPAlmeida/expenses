@@ -5,7 +5,7 @@
         <div th:replace="~{base :: header}"></div>
         <div class="container">
             <div th:replace="~{base :: titulo('Nova Despesa')}"></div>
-            <form method="post" th:action="@{/expenses/new}" th:object="${expenseDto}">
+            <form method="post" th:action="@{/expenses/new}" th:object="${financialRecordDto}">
                 <div class="mb-3">
                     <label class="form-label" for="titulo">Despesa</label>
                     <input th:field="*{title}" class="form-control" id="titulo" placeholder="Título da despesa">
