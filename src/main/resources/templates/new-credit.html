@@ -5,23 +5,23 @@
         <div th:replace="~{ base :: header }"></div>
         <div class="container">
             <div th:replace="~{ base :: titulo('Novo Crédito') }"></div>
-            <form method="post" th:action="@{/credits/new}">
+            <form method="post" th:action="@{/credits/new}" th:object="${financialRecordDto}">
                 <div class="mb-3">
                     <div class="mb-2">Tipo de Crédito</div>
                     <div class="form-check-inline">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <input th:field="*{transactionType}" value="SALARIO" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
                         <label class="form-check-label" for="flexRadioDefault1">
                             Salário
                         </label>
                     </div>
                     <div class="form-check-inline">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                        <input th:field="*{transactionType}" value="VALE" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
                         <label class="form-check-label" for="flexRadioDefault2">
                             Vale
                         </label>
                     </div>
                     <div class="form-check-inline">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                        <input th:field="*{transactionType}" value="OUTRO" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
                         <label class="form-check-label" for="flexRadioDefault2">
                             Outro
                         </label>
@@ -32,21 +32,21 @@
                         <label class="form-label" for="valor">Valor</label>
                         <div class="input-group mb-3">
                             <span class="input-group-text">R$</span>
-                            <input class="form-control" min="0" step="0.01" id="valor" type="number" placeholder="Valor do crédito">
+                            <input th:field="*{amount}" class="form-control" min="0" step="0.01" id="valor" type="number" placeholder="Valor do crédito">
                         </div>
                     </div>
                     <div class="col-4 mb-3">
                         <label class="form-label" for="data">Data</label>
-                        <input class="form-control" id="data" type="date">
+                        <input th:field="*{date}" class="form-control" id="data" type="date">
                     </div>
                     <div class="col-4 mb-3">
                         <label class="form-label" for="mesCorrente">Mês Corrente</label>
-                        <input class="form-control" type="month" id="mesCorrente">
+                        <input th:field="*{currentMonth}" class="form-control" type="month" id="mesCorrente">
                     </div>
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="descricao">Descrição</label>
-                    <textarea class="form-control" id="descricao" placeholder="Descrição do crédito"></textarea>
+                    <textarea th:field="*{description}" class="form-control" id="descricao" placeholder="Descrição do crédito"></textarea>
                 </div>
                 <button class="btn btn-success" type="submit">Cadastrar</button>
             </form>
