@@ -15,7 +15,7 @@ public class HomeController {
     private FinancialRecordRepository financialRecordRepository;
 
     @GetMapping
-    public ModelAndView findAllExpenses() {
+    public ModelAndView findAllFinancialRecords() {
         ModelAndView mv = new ModelAndView("home");
         mv.addObject("financialRecords", financialRecordRepository.findAll());
         return mv;
