@@ -8,4 +8,7 @@ import java.util.List;
 
 public interface FinancialRecordRepository extends JpaRepository<FinancialRecord, Long> {
     List<FinancialRecord> findByTransactionType(TransactionType transaction);
+
+    List<FinancialRecord> findByCurrentMonth(String month);
+
 }

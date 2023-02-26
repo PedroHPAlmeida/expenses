@@ -5,6 +5,32 @@
         <div th:replace="~{base :: header}"></div>
         <div class="container">
             <div th:replace="~{base :: titulo('Extrato')}"></div>
+            <div class="mb-3" style="float: right; width: 210px">
+                <form th:action="@{/filter}" method="post" th:object="${currentMonthDto}">
+                    <div class="row">
+                        <div class="col-8">
+                            <select th:field="*{month}" id="filtro" class="form-select form-select-sm" style="margin: 0">
+                                <option value="all">Selecione</option>
+                                <option value="janeiro">Janeiro</option>
+                                <option value="fevereiro">Fevereiro</option>
+                                <option value="março">Março</option>
+                                <option value="abril">Abril</option>
+                                <option value="maio">Maio</option>
+                                <option value="junho">Junho</option>
+                                <option value="julho">Julho</option>
+                                <option value="agosto">Agosto</option>
+                                <option value="setembro">Setembro</option>
+                                <option value="outubro">Outubro</option>
+                                <option value="novembro">Novembro</option>
+                                <option value="dezembro">Dezembro</option>
+                            </select>
+                        </div>
+                        <div class="col" style="margin: 0">
+                            <button class="btn btn-outline-secondary btn-sm" type="submit">Filtar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
             <table class="table">
                 <thead>
                     <tr>
