@@ -13,12 +13,18 @@
             font-family: 'Handlee', cursive;
             font-size: 2.5em;
         }
+        div span a {
+            text-decoration: none;
+            color: #fff;
+        }
+
     </style>
 </head>
 
 <div th:fragment="header">
     <div class="logo-container p-3 d-flex justify-content-between mb-2">
-        <span class="logo ml-2">ExpCon</span>
+        <span><a th:href="@{/}" class="logo ml-2">ExpCon</a></span>
+        <a href="#">Teste</a>
         <div class="menu">
             <nav class="navbar navbar-expand-sm navbar-custom">
                 <div class="container-fluid">
